@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+    background-size: 400% 400%;
+
+    animation: backgroundMove 10s infinite alternate;
+}
+
+/* Background Animation */
+@keyframes backgroundMove{
+    0%{
+        background-position: left;
+    }
+    100%{
+        background-position: right;
+    }
+}
+
+.container{
+    width: 90%;
+    max-width: 700px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+
+    padding: 50px 40px;
+
+    border-radius: 25px;
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+
+    animation: fadeIn 2s ease;
+}
+
+/* Fade In */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Birthday Heading */
+.birthday-text{
+    font-size: 52px;
+    color: white;
+
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ff4da6,
+        0 0 40px #ff4da6;
+
+    margin-bottom: 30px;
+
+    animation: glow 2s infinite alternate;
+}
+
+/* Glow Animation */
+@keyframes glow{
+    from{
+        text-shadow:
+            0 0 10px #fff,
+            0 0 20px #ff4da6,
+            0 0 40px #ff4da6;
+    }
+
+    to{
+        text-shadow:
+            0 0 20px #fff,
+            0 0 30px #ff1a75,
+            0 0 60px #ff1a75;
+    }
+}
+
+/* Message */
+.message{
+    font-size: 20px;
+    line-height: 1.8;
+
+    color: white;
+
+    margin-bottom: 40px;
+}
+
+/* Buttons */
+.button-group{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+button{
+    padding: 18px;
+
+    border: none;
+    border-radius: 50px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+#talkBtn{
+    background: #ff1a75;
+    color: white;
+}
+
+#talkBtn:hover{
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #ff1a75;
+}
+
+#noTalkBtn{
+    background: white;
+    color: #ff1a75;
+}
+
+#noTalkBtn:hover{
+    transform: scale(1.08);
+}
+
+/* Floating Hearts */
+.hearts span{
+    position: absolute;
+    bottom: -50px;
+
+    font-size: 30px;
+
+    animation: floatHearts 10s linear infinite;
+}
+
+.hearts span:nth-child(1){
+    left: 10%;
+    animation-duration: 8s;
+}
+
+.hearts span:nth-child(2){
+    left: 30%;
+    animation-duration: 10s;
+}
+
+.hearts span:nth-child(3){
+    left: 50%;
+    animation-duration: 7s;
+}
+
+.hearts span:nth-child(4){
+    left: 70%;
+    animation-duration: 9s;
+}
+
+.hearts span:nth-child(5){
+    left: 90%;
+    animation-duration: 11s;
+}
+
+@keyframes floatHearts{
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10%{
+        opacity: 1;
+    }
+
+    100%{
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Mobile Responsive */
+@media(max-width: 768px){
+
+    .birthday-text{
+        font-size: 34px;
+    }
+
+    .message{
+        font-size: 16px;
+    }
+
+    button{
+        font-size: 15px;
+    }
+
+}
+
